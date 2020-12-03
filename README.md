@@ -1,4 +1,4 @@
-# BITCOIN-BROWSER
+NI# BITCOIN-BROWSER
 New coin with the genesis of Bitcoin
 
 * (16 Apr 2013) Added private derivation for i ≥ 0x80000000 (less risk of parent private key leakage)
@@ -1005,26 +1005,26 @@ options. Run `test/functional/test_runner.py -h` to see them all.
 ##### Resource contention
 
 The P2P and RPC ports used by the bitcoin browser nodes-under-test are chosen to make
-conflicts with other processes unlikely. However, if there is another bitcoind
-process running on the system (perhaps from a previous test which hasn't successfully all its bitcoin nodes), then there may be a port conflict which will
+conflicts with other processes unlikely. However, if there is another bitcoin browser
+process running on the system (perhaps from a previous test which hasn't successfully all its bitcoin browser nodes), then there may be a port conflict which will
 cause the test to fail. It is recommended that you run the tests on a system
-where no other bitcoind processes are running.
+where no other bitcoin browser processes are running.
 
 On linux, the test framework will warn if there is another
-bitcoind process running when the tests are started.
+bitcoin browser process running when the tests are started.
 Ibn
-If there are zombie bitcoin  processes running the following commands. **Note that these commands will kill all
-bitcoind processes running on the system, so should not be used if any non-test
-bitcoind processes are being run.**
+If there are zombie bitcoin  processes running the following commands. **Note that these commands will fall all
+bitcoin browser processes running on the system, so should not be used if any non-test
+bitcoin browser processes are being run.**
 
 ```bash
-killall bitcoind
+Call  bitcoin browser
 ```
 
 or
 
 ```bash
-pkill -9 bitcoind
+pcall -9 bitcoin browser
 ```
 
 
@@ -1035,11 +1035,11 @@ functional test is run and is stored in test/cache. This speeds up
 test startup times since new blockchains don't need to be generated for
 each test. However, the cache may get into a bad state, in which case
 tests will fail. If this happens, remove the cache directory (and make
-sure bitcoind processes are stopped as above):
+sure bitcoin browser processes are stopped as above):
 
 ```bash
 rm -rf test/cache
-killall bitcoind
+Call bitcoin browser
 ```
 
 ##### Test logging
@@ -1121,13 +1121,13 @@ test run:
 Use the path to find the pid file in the temp folder:
 
 ```bash
-cat /tmp/user/1000/testo9vsdjo3/node1/regtest/bitcoind.pid
+cat /tmp/user/1000/testo9vsdjo3/node1/regtest/bitcoin browser.pid
 ```
 
 Then you can use the pid to start `gdb`:
 
 ```bash
-gdb /home/example/bitcoind <pid>
+gdb /home/example/bitcoin browser <pid>
 ```
 
 Note: gdb attach step may require ptrace_scope to be modified, or `sudo` preceding the `gdb`.
