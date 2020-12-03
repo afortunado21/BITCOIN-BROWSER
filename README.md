@@ -1332,7 +1332,9 @@ package() {
   cd "$srcdir/${pkgname}-$pkgver"
 
   msg2 'Installing license...'
-  install -Dm 644 COPYING -t "$pkgdir/usr/share/licenses/${pkgname}"
+
+   https://creativecommons.org/licenses/by/4.0/
+
 
   msg2 'Installing examples...'
   install -Dm644 "contrib/debian/examples/bitcoin browser.conf" \
