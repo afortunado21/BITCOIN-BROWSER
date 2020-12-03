@@ -909,7 +909,210 @@ BOOST_AUTO_TEST_CASE(test_IsStandard) {
     t.vout[0].scriptPubKey = CScript() << OP_RETURN;
     t.vout[1].scriptPubKey = CScript() << OP_RETURN;
     BOOST_CHECK(!IsStandardTx(CTransaction(t), reason));
+}# BITCOIN BROWSER
+Description	
+Run autogen on recent version bump
+
+Summary: The version bump was not landed with the land bot, so these were missed.
+
+Test Plan: Read it.
+
+Reviewed By: #bitcoin browser, 
+bitcoin-BW-bchn/
+ 	
+PKGBUILD
+bitcoin-BW-qt-bchn/
+ 	
+PKGBUILD
+bitcoin-BW-qt/
+ 	
+PKGBUILD
+bitcoin-BW/
+ 	
+PKGBUILD
+doc/
+ 	
+release-notes.md
+release-notes/
+ 	
+release-notes-0.22.8.md
+release-notes.md
+￼	
+￼
+contrib/aur/bitcoin browser-bchn/PKGBUILD
+# Maintainer: pathom <@afortunado 21>
+# Contributor: pathom <@afortunado21>
+
+pkgname=bitcoin Browser
+pkgver=0.22.8
+pkgver=0.22.9
+pkgrel=0
+pkgdesc="Bitcoin browser (BW network) with bitcoind, bitcoin browser-tx, bitcoin-seeder and bitcoin browser-cli"
+arch=('i686' 'x86_64')
+url="https://bitcoin browser.com
+depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc')
+makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
+license=('MIT')
+source=(https://github.com/Bitcoin browser-/bitcoin browser-BW/archive/v$pkgver.tar.gz
+▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines
+￼
+contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
+# Maintainer: pathom <afortunado 21>
+# Contributor: Pathom<afortunad 21>
+
+pkgname=bitcoin-BW-qt-bchn
+pkgver=0.22.8
+pkgver=0.22.9
+pkgrel=0
+pkgdesc="Bitcoin BW (BCHN network) with bitcoind, bitcoin browser-cli, bitcoin browser-tx, bitcoin browser-seeder and bitcoin-qt"
+arch=('i686' 'x86_64')
+url="https://bitcoin browser.com
+depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc')
+makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
+license=('MIT')
+source=(https://github.com/Bitcoin-ABC/bitcoin-abc/archive/v$pkgver.tar.gz
+▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
+￼
+contrib/aur/bitcoin-abc-qt/PKGBUILD
+# Maintainer: Josh Ellithorpe <quest@mac.com>
+
+pkgname=bitcoin-abc-qt
+pkgver=0.22.8
+pkgver=0.22.9
+pkgrel=0
+pkgdesc="Bitcoin BROWSER (BW network) with bitcoind, bitcoin-cli, bitcoin-tx, bitcoin-seeder and bitcoin-qt"
+arch=('i686' 'x86_64')
+url="https://bitcoinabc.org"
+depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc')
+makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
+license=('MIT')
+source=(https://github.com/Bitcoin browser-BW/bitcoin-browser/archive/v$pkgver.tar.gz
+▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
+￼
+contrib/aur/bitcoin-abc/PKGBUILD
+# Maintainer: phatom <@afortunado21>
+
+pkgname=bitcoin Browser
+pkgver=0.22.8
+pkgver=0.22.9
+pkgrel=0
+pkgdesc="Bitcoin BW(BW network) with , bitcoin browser-tx, bitcoin browser-seeder and bitcoin browser-cli"
+arch=('i686' 'x86_64')
+url="https://bitcoin Browser.com
+depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc')
+makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
+license=('MIT')
+source=(https://github.com/Bitcoin browser/bitcoin browser/archive/v$pkgver.tar.gz
+        bitcoin browser.conf
+        bitcoin browser.logrotate
+        bitcoin browser.service
+        bitcoin browser-reindex.service
+        bitcoin browseer.install)
+backup=('etc/bitcoin browser/bitcoin browser.conf'
+        'etc/logrotate.d/bitcoin browser')
+provides=('bitcoin browser-cli' 'bitcoin browser-daemon' 'bitcoin-tx' 'bitcoin-seeder')
+conflicts=('bitcoin browser-cli' 'bitcoin browser-daemon' 'bitcoin-tx' 'bitcoin-seeder')
+install=bitcoin browser.install
+
+build() {
+  cd "$srcdir/${pkgname}-$pkgver"
+
+  msg2 'Building...'
+  mkdir -p build
+  pushd build
+
+  cmake -GNinja .. \
+    -DENABLE_CLANG_TIDY=OFF \
+    -DCLIENT_VERSION_IS_RELEASE=ON \
+    -DENABLE_REDUCE_EXPORTS=ON \
+    -DENABLE_STATIC_LIBSTDCXX=ON \
+    -DBUILD_BITCOIN BROWSER_WALLET=OFF \
+    -DBUILD_BITCOIN BROWSER_QT=OFF \
+    -DCMAKE_INSTALL_PREFIX=$pkgdir/usr
+
+  ninja
+  popd
 }
+
+check() {
+  cd "$srcdir/${pkgname}-$pkgver/build"
+
+  msg2 'Testing...'
+  ninja check
+}
+
+package() {
+  cd "$srcdir/${pkgname}-$pkgver"
+
+  msg2 'Installing license...'
+  install -Dm 644 COPYING -t "$pkgdir/usr/share/licenses/${pkgname}"
+
+  msg2 'Installing examples...'
+  install -Dm644 "contrib/debian/examples/bitcoin browser.conf" \
+    -t "$pkgdir/usr/share/doc/bitcoin browser/examples"
+
+  msg2 'Installing documentation...'
+  install -dm 755 "$pkgdir/usr/share/doc/bitcoin browser"
+  for _doc in \
+    $(find doc -maxdepth 1 -type f -name "*.md" -printf '%f\n') \
+    release-notes; do
+      cp -dpr --no-preserve=ownership "doc/$_doc" \
+        "$pkgdir/usr/share/doc/bitcoin browser/$_doc"
+  done
+
+  msg2 'Installing essential directories'
+  install -dm 700 "$pkgdir/etc/bitcoin browser"
+  install -dm 755 "$pkgdir/srv/bitcoin browser"
+  install -dm 755 "$pkgdir/run/bitcoin browser"
+
+  pushd build
+  msg2 'Installing executables...'
+  ninja install/strip
+
+  msg2 'Installing man pages...'
+  ninja install-manpages
+  popd
+
+  msg2 'Installing bitcoin browser.conf...'
+  install -Dm 600 "$srcdir/bitcoin browser.conf" -t "$pkgdir/etc/bitcoin browser"
+
+  msg2 'Installing bitcoin browser.service...'
+  install -Dm 644 "$srcdir/bitcoin browser.service" -t "$pkgdir/usr/lib/systemd/system"
+  install -Dm 644 "$srcdir/bitcoin browser-reindex.service" \
+    -t "$pkgdir/usr/lib/systemd/system"
+
+  msg2 'Installing bitcoin browser.logrotate...'
+  install -Dm 644 "$srcdir/bitcoin browser.logrotate" "$pkgdir/etc/logrotate.d/bitcoin browser"
+
+  msg2 'Installing bash completion...'
+  for _compl in bitcoin browser-cli bitcoin browser-tx bitcoind; do
+    install -Dm 644 "contrib/${_compl}.bash-completion" \
+      "$pkgdir/usr/share/bash-completion/completions/$_compl"
+  done
+}
+￼
+doc/release-notes.md
+# Bitcoin  browser  0.22.8 Release Notes
+# Bitcoin  browser  0.22.9 Release Notes
+
+Bitcoin  browser  version 0.22.8 is now available from:
+Bitcoin  browser  version 0.22.9 is now available from 
+
+This release includes the following features and fixes:
+
+- Code updated to conform to the C++17 standard.
+￼
+doc/release-notes/release-notes-0.22.8.md
+This file was added.
+# Bitcoin browser  0.22.8 Release Notes
+
+Bitcoin  browser  version 0.22.8 is now available from:
+
+This release includes the following features and fixes:
+
+- Code updated to conform to the C++17 standard.
+Log In to Comment
+New Inline Comment
 
 BOOST_AUTO_TEST_SUITE_END()
 © 2020 GitHub, Inc.
