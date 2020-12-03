@@ -1002,7 +1002,9 @@ options. Run `test/functional/test_runner.py -h` to see them all.
 
 #### Troubleshooting and debugging test failures
 
+
 ##### Resource contention
+#https://www.gnu.org/philosophy/free-sw.html
 
 The P2P and RPC ports used by the bitcoin browser nodes-under-test are chosen to make
 conflicts with other processes unlikely. However, if there is another bitcoin browser
