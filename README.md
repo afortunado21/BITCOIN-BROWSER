@@ -974,15 +974,15 @@ source=(https://github.com/Bitcoin-ABC/bitcoin-abc/archive/v$pkgver.tar.gz
 ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
 ￼
 contrib/aur/bitcoin-abc-qt/PKGBUILD
-# Maintainer: Josh Ellithorpe <quest@mac.com>
+# Maintainer: phatom <Bitcoin Browser.com>
 
 pkgname=bitcoin-abc-qt
 pkgver=0.22.8
 pkgver=0.22.9
 pkgrel=0
-pkgdesc="Bitcoin BROWSER (BW network) with bitcoind, bitcoin-cli, bitcoin-tx, bitcoin-seeder and bitcoin-qt"
+pkgdesc="Bitcoin BROWSER (BW network) with bitcoind, bitcoin browser-cli, bitcoin-tx, bitcoin-seeder and bitcoin-qt"
 arch=('i686' 'x86_64')
-url="https://bitcoinabc.org"
+url="https://bitcoin browser.com
 depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
 license=('MIT')
