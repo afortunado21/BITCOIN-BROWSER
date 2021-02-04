@@ -1,4 +1,5 @@
 NI# BITCOIN-BROWSER
+https://github.com/afortunado21/BITCOIN-BROWSER.wiki.git
 New coin with the genesis of Bitcoin
 
 * (16 Apr 2013) Added private derivation for i ≥ 0x80000000 (less risk of parent private key leakage)
@@ -10,12 +11,11 @@ New coin with the genesis of Bitcoin
 <pre>
   BIP: 32
   Layer: Applications
-  Title: Hierarchical Deterministic Wallets
   Comments-Summary: No comments yet.
-  Comments-URI: https://github.com/bitcoin/bips/wiki/Comments:BIP-0032
+  Comments-URI:https://github.com/afortunado21/BITCOIN-BROWSER.wiki.git comment :BIP-0032
   Status: Finalbitcoin
   Type: Informational
-  Created: 2012-02-11
+  Created: 2019-23-11
   License: 2-clause BSD
 </pre>
 
