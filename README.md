@@ -9,13 +9,12 @@ New coin with the genesis of Bitcoin
 
 <pre>
   BIP: 32
-  Layer: Applications
-  Title: Hierarchical Deterministic Wallets
+  Layer: Application"
   Comments-Summary: No comments yet.
   Comments-URI: https://github.com/bitcoin/bips/wiki/Comments:BIP-0032
   Status: Finalbitcoin
   Type: Informational
-  Created: 2012-02-11
+  Created: 2019-11-23
   License: 2-clause BSD
 </pre>
 
