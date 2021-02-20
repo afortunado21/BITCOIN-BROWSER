@@ -7,7 +7,7 @@ New coin with the genesis of Bitcoin
 * (25 May 2013) Added test vectors
 * (15 Jan 2014) Rename keys with index ≥ 0x80000000 to hardened keys, and add explicit conversion functions.
 * (24 Feb 2017) Added test vectors for hardened derivation with leading zeros
-
+https://braiins.com/os/plus?utm_source=SP&utm_medium=aboutP
 <pre>
   BIP: 32
   Layer: Applications
