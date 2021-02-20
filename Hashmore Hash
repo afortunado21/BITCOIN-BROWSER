@@ -1,0 +1,61 @@
+
+…
+62 lines (54 sloc)  2.06 
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+# Please, keep in mind that we may also license BOSI or any part thereof
+# under a proprietary license. For more information on the terms and conditions
+# of such proprietary license or if you have any other questions, please
+
+
+import hashlib
+
+
+class HashStream:
+    """
+    Class for computing hash during stream reading
+    Result digest is stored in hash attributed.
+    It is computed from all blocks which has been read from the stream.
+    """
+    def __init__(self, stream, algorithm):
+        """
+        Create new stream which support hashing of original stream with given algorithm
+        :param stream:
+            Original stream used for reading and continual hashing.
+        :param algorithm:
+            The name of hash algorithm supported by hashlib module.
+        """
+        self._stream = stream
+        self.hash = hashlib.new(algorithm)
+
+    def read(self, size):
+        """
+        Read from original stream block of specified size and compute its hash
+        :param size:
+            Size of block to be read from original stream.
+        :return:
+            Read block of specified size.
+        """
+        block = self._stream.read(size)
+        self.hash.update(block)
+        return block
+
+    def close(self):
+        """
+        Close original stream.
+        """
+        self._stream.close()
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
