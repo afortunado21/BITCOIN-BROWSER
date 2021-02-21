@@ -1270,19 +1270,11 @@ pkgver=0.22.9
 pkgrel=0
 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
-license=('MIT')
-        bitcoin browser.conf
-        bitcoin browser.logrotate
-        bitcoin browser.service
-        bitcoin browser-reindex.service
-        bitcoin browseer.install)
-backup=('etc/bitcoin browser/bitcoin browser.conf'
-        'etc/logrotate.d/bitcoin browser')
-provides=('bitcoin browser-cli' 'bitcoin browser-daemon' 'bitcoin-tx' 'bitcoin-seeder')
-conflicts=('bitcoin browser-cli' 'bitcoin browser-daemon' 'bitcoin-tx' 'bitcoin-seeder')
-install=bitcoin browser.install
+''bitcoin-seeder')
+ install=bitcoin browser.install
 
-build() {
+ build() {
+
   cd "$srcdir/${pkgname}-$pkgver"
 
   msg2 'Building...'
