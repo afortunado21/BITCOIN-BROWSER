@@ -1241,7 +1241,7 @@ arch=('i686' 'x86_64')
 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
 license=('MIT')
-source=(https://github.com/Bitcoin browser-/bitcoin browser-BW/archive/v$pkgver.tar.gz
+source=(https://github.com/Bitcoin browser)
 ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines
 ￼
 contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
@@ -1257,28 +1257,21 @@ arch=('i686' 'x86_64')
 depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
 license=('MIT')
-source=(https://github.com/Bitcoin-ABC/bitcoin-abc/archive/v$pkgver.tar.gz
 ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
-￼
-contrib/aur/bitcoin-abc-qt/PKGBUILD
 # Maintainer: phatom <Bitcoin Browser.com>
-
 pkgname=bitcoin-abc-qt
 pkgver=0.22.8
 pkgver=0.22.9
 pkgrel=0
 pkgdesc="Bitcoin BROWSER (BW network) with bitcoind, bitcoin browser-cli, bitcoin-tx, bitcoin-seeder and bitcoin-qt"
 arch=('i686' 'x86_64')
-url="https://bitcoin browser.com
 depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
 license=('MIT')
 source=(https://github.com/Bitcoin browser-BW/bitcoin-browser/archive/v$pkgver.tar.gz
 ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
-￼
 contrib/aur/bitcoin-abc/PKGBUILD
 # Maintainer: phatom <@afortunado21>
-
 pkgname=bitcoin Browser
 pkgver=0.22.8
 pkgver=0.22.9
@@ -1288,7 +1281,6 @@ arch=('i686' 'x86_64')
 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
 license=('MIT')
-source=(https://github.com/Bitcoin browser/bitcoin browser/archive/v$pkgver.tar.gz
         bitcoin browser.conf
         bitcoin browser.logrotate
         bitcoin browser.service
@@ -1333,7 +1325,6 @@ package() {
   msg2 'Installing license...'
 
    https://creativecommons.org/licenses/by/4.0/
-
 
   msg2 'Installing examples...'
   install -Dm644 "contrib/debian/examples/bitcoin browser.conf" \
