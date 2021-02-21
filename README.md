@@ -1129,7 +1129,6 @@ cat /tmp/user/1000/testo9vsdjo3/node1/regtest/bitcoin browser.pid
 Then you can use the pid to start `gdb`:
 
 ```bash
-gdb /home/example/bitcoin browser <pid>
 ```
 
 Note: gdb attach step may require ptrace_scope to be modified, or `sudo` preceding the `gdb`.
